@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate an array k times</title>
+  </head>
+  <body>
+    <p id="arr1"></p>
+    <p id="k1"></p>
+    <p id="rarr1"></p>
+    <p id="arr2"></p>
+    <p id="k2"></p>
+    <p id="rarr2"></p>
+
+    <script>
+      // Anonymousfun
+
+      var rotate = function (arr) {
+        document.getElementById("arr1").innerHTML = `Initial array is ${arr}`;
+        var k = prompt("Enter number of times array to be rotated");
+        document.getElementById("k1").innerHTML = `k = ${k}`;
+        for (var i = 0; i < k; i++) {
+          var ele1 = arr[0];
+          var arr = arr.slice(1);
+          var arr1 = arr.concat(ele1);
+          arr = arr1;
+        }
+        document.getElementById(
+          "rarr1"
+        ).innerHTML = `Array rotated ${k} times is ${arr}`;
+      };
+      rotate([1, 2, 3, 4, 5, 6, 7]);
+
+      // IIFE fun
+
+      (function (arr) {
+        document.getElementById("arr2").innerHTML = `Initial array is ${arr}`;
+        var k = prompt("Enter number of times array to be rotated");
+        document.getElementById("k2").innerText = `k = ${k}`;
+        for (var i = 0; i < k; i++) {
+          var ele1 = arr[0];
+          var arr = arr.slice(1);
+          var arr1 = arr.concat(ele1);
+          arr = arr1;
+        }
+        document.getElementById(
+          "rarr2"
+        ).innerHTML = `Array rotated ${k} times is ${arr}`;
+      })(["a", "b", "c", "d", "e", "f", "g", "h"]);
+    </script>
+  </body>
+</html>

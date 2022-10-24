@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Title case</title>
+  </head>
+  <body>
+    <script>
+      // Anonymousfun
+      console.log("Convert string to Title Case using anonymous function");
+      var titlecaps = function (arr, arr1) {
+        for (var i = 0; i < arr.length; i++) {
+          arr1[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
+        }
+        console.log(arr);
+        console.log(arr1);
+      };
+      titlecaps(["Hello", "world", "good", "day"], []);
+
+      // IIFE fun
+      console.log("Convert string to Title Case using IIFE function");
+      (function (str1, str2) {
+        var str = str1.split(" ");
+        for (i in str) {
+          var s = str[i][0].toUpperCase() + str[i].slice(1);
+          str2 = str2 + `${s} `;
+        }
+        console.log(str);
+        console.log(str2);
+      })("welcome To real world", "");
+    </script>
+  </body>
+</html>
