@@ -1,2 +1,2 @@
-# JS-Day45
+# JS-Day 5
 Task on functions
